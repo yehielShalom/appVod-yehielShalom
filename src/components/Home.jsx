@@ -1,21 +1,37 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const Home = () => {
-  const [search, setSearch] = useState([]);
-  const res = async function () {
-    let { data } = await axios.get(
-      `https://www.omdbapi.com/?s=bank&amp;y=2020&apikey=8ec4e915`
+  const [movies, setMovies] = useState([]);
+  const { searchQ } = useParams();
+  const getData = async () => {
+    const { data } = await axios.get(
+      `https://www.omdbapi.com/?s=${
+        searchQ ? searchQ : "bank"
+      }&amp;y=2020&apikey=8ec4e915`
     );
-    setSearch(data.Search);
+    setMovies(data.Search);
+    console.log(data);
   };
-  console.log(search);
+
+  const object = {
+    number: 5,
+  };
+
+  // const z = object.number; || const {number: zero} = object
+
   useEffect(() => {
-    res();
-  }, []);
+    getData();
+  }, [searchQ]);
+
   return (
-    <div>
-      <p> home</p>
+    <div className="grid grid-cols-4 gap-6 mt-6 p-6">
+      {movies.map((movie, index) => (
+        <div key={index}>
+          <img className="rounded" src={movie.Poster} alt="bank poster" />
+        </div>
+      ))}
     </div>
   );
 };

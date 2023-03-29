@@ -5,16 +5,19 @@ import Layout from "../layout/Layout";
 import NotFound404 from "../layout/NotFound404";
 
 const AppRoutes = () => {
-  return <div>
-    <Router>
+  return (
+    <div>
+      <Router>
         <Routes>
-            <Route path="/" element={<Layout/>}>
-                <Route index element={<Home/>}/>
-            </Route>
-            <Route path="*" element={<NotFound404/>} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/search/:searchQ" element={<Home />} />
+          </Route>
+          <Route path="*" element={<NotFound404 />} />
         </Routes>
-    </Router>
-  </div>;
+      </Router>
+    </div>
+  );
 };
 
 export default AppRoutes;

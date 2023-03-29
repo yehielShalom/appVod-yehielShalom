@@ -1,8 +1,18 @@
 import { Carousel } from "flowbite-react";
-import React, {  useRef } from "react";
+import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import Home from "../components/Home";
 
 const NavBar = () => {
   const searchRef = useRef();
+  const nav = useNavigate()
+const handleClick=()=>{
+  nav(`search/${searchRef.current.value}`)
+  };
+
+ // `https://www.omdbapi.com/?s=${nameCat}&amp;y=2020&apikey=8ec4e915`
+
+
 
   return (
     <div>
@@ -11,8 +21,18 @@ const NavBar = () => {
           <h1>logo</h1>
           <div className="form-control">
             <div className="input-group">
-              <input ref={searchRef} type="text" placeholder="Search…" className="input input-bordered input-sm"/>
-              <button onClick={()=>console.log(searchRef.current.value)} className="btn btn-square btn-sm">
+              <input
+                ref={searchRef}
+                type="text"
+                placeholder="Search…"
+                className="input input-bordered input-sm"
+              />
+              <button
+                onClick={() => {
+                  handleClick();
+                }}
+                className="btn btn-square btn-sm"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-3 w-4"
@@ -92,5 +112,4 @@ const NavBar = () => {
     </div>
   );
 };
-
 export default NavBar;
