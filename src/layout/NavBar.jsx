@@ -80,7 +80,7 @@ const NavBar = () => {
                 />
               </div>
               <div
-                className="relative float-left -mr-[100%] hidden w-full !transform-none opacity-0 transition-opacity duration-[600ms] ease-in-out motion-reduce:transition-none"
+                className="relative float-left -mr-[100%] hidden w-full  !transform-none opacity-0 transition-opacity duration-[600ms] ease-in-out motion-reduce:transition-none"
                 data-te-carousel-fade
                 data-te-carousel-item
               >
@@ -91,7 +91,7 @@ const NavBar = () => {
                 />
               </div>
               <div
-                className="relative float-left -mr-[100%] hidden w-full !transform-none opacity-0 transition-opacity duration-[600ms] ease-in-out motion-reduce:transition-none"
+                className="relative float-left -mr-[100%] hidden w-full  !transform-none opacity-0 transition-opacity duration-[600ms] ease-in-out motion-reduce:transition-none"
                 data-te-carousel-fade
                 data-te-carousel-item
               >
