@@ -5,19 +5,18 @@ const UpNavBar = () => {
   const searchRef = useRef();
   const nav = useNavigate();
   const handleClick = () => {
-    nav(`search/${searchRef.current.value}`);
+    nav(`/search/${searchRef.current.value}`);
   };
 
   return (
-    <div className="upNav">
-      <div className="logoAndSearch flex justify-between m-5">
+    <div className="upNav absolute z-10 flex justify-between w-screen">
+      <div className="logoAndSearch flex justify-between w-screen m-5">
         <Link to={"/"}>
           <div className="italic hover:not-italic text-4xl">logo</div>
         </Link>
         <div className="form-control">
           <div className="input-group">
-            <input
-              ref={searchRef}
+            <input ref={searchRef}
               type="text"
               placeholder="Search…"
               className="input input-bordered input-sm"

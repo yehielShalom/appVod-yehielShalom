@@ -13,10 +13,10 @@ const AppRoutes = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="/search/:searchQ" element={<Home />} />
-            <Route path="year/:YYYY" element={<Years/>} />
+            <Route path="search/:searchQ" element={<Home />} />
+            <Route path="year/:YYYY" element={<Home/>} />
           </Route>
-          <Route path="/search/:searchQ/video/:id" element={<OneMovie />} />
+          <Route path="video/:id" element={<OneMovie />} />
           
           <Route path="*" element={<NotFound404 />} />
         </Routes>

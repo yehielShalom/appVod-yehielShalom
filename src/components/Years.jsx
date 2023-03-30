@@ -3,17 +3,15 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 const Years = () => {
-  const { YYYY } = useParams();
-  const [year, setYear] = useState([]);
+  // const { YYYY } = useParams();
+  // const [year, setYear] = useState([]);
+
   const yearRef = useRef();
   const nav = useNavigate();
-  const handelChange = () => {
-    console.log(yearRef.current.value);
-    nav(`/year/${yearRef.current.value}`);
-    console.log(YYYY);
-  };
 
-  // `https://www.omdbapi.com/?s=bank&amp;y=${}&apikey=8ec4e915`
+  const handelChange = () => {
+    nav(`/year/${yearRef.current.value}`);
+  };
 
   return (
     <div>
@@ -21,8 +19,7 @@ const Years = () => {
         <select
           ref={yearRef}
           className="select select-ghost w-full max-w-xs mt-4"
-          onChange={handelChange}
-        >
+          onChange={handelChange}>
           <option value={1990}>1990</option>
           <option value={2000}>2000</option>
           <option value={2010}>2010</option>
