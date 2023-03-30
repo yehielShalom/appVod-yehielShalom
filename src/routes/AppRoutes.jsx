@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "../components/Home";
+import oneMovie from "../components/OneMovie";
 import Layout from "../layout/Layout";
 import NotFound404 from "../layout/NotFound404";
 
@@ -12,7 +13,7 @@ const AppRoutes = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/search/:searchQ" element={<Home />} />
-            <Route path="/video/:id" element={<one} />
+            <Route path="/video/:id" element={<oneMovie/>} />
           </Route>
           <Route path="*" element={<NotFound404 />} />
         </Routes>
