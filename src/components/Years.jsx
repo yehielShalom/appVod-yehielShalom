@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const Years = () => {
   const { YYYY } = useParams();
@@ -9,18 +9,9 @@ const Years = () => {
   const nav = useNavigate();
   const handelChange = () => {
     console.log(yearRef.current.value);
-    nav(`/year/${yearRef.current.value}`)
+    nav(`/year/${yearRef.current.value}`);
+    console.log(YYYY);
   };
-  const getYears = async () => {
-    let { data } = await axios.get(
-      `https://www.omdbapi.com/?s=bank&amp;y=${YYYY}&apikey=8ec4e915`
-    );
-    console.log(data);
-    setYear(data);
-  };
-  useEffect(() => {
-    getYears();
-  }, []);
 
   // `https://www.omdbapi.com/?s=bank&amp;y=${}&apikey=8ec4e915`
 
