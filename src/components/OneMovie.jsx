@@ -1,14 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import UpNavBar from "../layout/UpNavBar";
 
 const OneMovie = () => {
   const { id } = useParams();
   const { searchQ } = useParams();
   const [movie, setMovie] = useState([]);
-  const [URL, setURL] = useState("");
-
+  const navigate = useNavigate();
   const getData = async () => {
     const { data } = await axios.get(
       `https://omdbapi.com/?i=${id}&apikey=8ec4e915`
@@ -29,10 +28,7 @@ const OneMovie = () => {
 
       <div className="card card-side bg-base-100 shadow-xl m-36">
         <figure>
-          <img
-            src={movie.Poster}
-            alt="Movie"
-          />
+          <img src={movie.Poster} alt="Movie" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">Name : {movie.Title}</h2>
@@ -40,9 +36,9 @@ const OneMovie = () => {
           <p>Plot : {movie.Plot}</p>
           <p>Released : {movie.Released}</p>
           <div className="card-actions justify-end">
-          <Link to={`/search/${searchQ}`}>
-            <button className="btn btn-primary">click to back</button>
-            </Link>
+            <button className="btn btn-primary" onClick={() => navigate(-1)}>
+              click to back
+            </button>
           </div>
         </div>
       </div>
