@@ -15,23 +15,18 @@ const Home = () => {
     console.log(data);
   };
 
-  const object = {
-    number: 5,
-  };
-
-  // const z = object.number; || const {number: zero} = object
-
   useEffect(() => {
     getData();
   }, [searchQ]);
 
   return (
     <div className="grid grid-cols-4 gap-6 mt-6 p-6">
-      {movies && movies.map((movie, index) => (
-        <Link  key={index} >
-          <img className="rounded" src={movie.Poster} alt="bank poster" />
-        </Link>
-      ))}
+      {movies &&
+        movies.map((movie, index) => (
+          <Link key={index} to={`/search/${searchQ}/video/${movie.imdbID}`}>
+            <img className="rounded" src={movie.Poster} alt="bank poster" />
+          </Link>
+        ))}
     </div>
   );
 };
