@@ -1,21 +1,16 @@
 import { Carousel } from "flowbite-react";
 import React from "react";
-import {  useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import Years from "../components/years";
 
 const NavBar = () => {
+  const nav = useNavigate();
 
-  const nav = useNavigate()
-
-
- // `https://www.omdbapi.com/?s=${nameCat}&amp;y=2020&apikey=8ec4e915`
-
-
+  // `https://www.omdbapi.com/?s=${nameCat}&amp;y=2020&apikey=8ec4e915`
 
   return (
     <div>
       <div className="upNav">
-
         {/* -------------------------------- */}
         <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
           <Carousel slideInterval={5000}>
@@ -44,6 +39,7 @@ const NavBar = () => {
             />
           </Carousel>
         </div>
+        <Years/>
         <div className="downNav"></div>
       </div>
     </div>

@@ -13,7 +13,7 @@ const UpNavBar = () => {
     <div className="upNav">
       <div className="logoAndSearch flex justify-between m-5">
         <Link to={"/"}>
-          <div className="italic hover:not-italic text-4xl ">logo</div>
+          <div className="italic hover:not-italic text-4xl">logo</div>
         </Link>
         <div className="form-control">
           <div className="input-group">

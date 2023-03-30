@@ -5,7 +5,6 @@ import UpNavBar from "../layout/UpNavBar";
 
 const OneMovie = () => {
   const { id } = useParams();
-  const { searchQ } = useParams();
   const [movie, setMovie] = useState([]);
   const navigate = useNavigate();
   const getData = async () => {
