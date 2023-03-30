@@ -9,7 +9,8 @@ const Years = () => {
   const nav = useNavigate();
   const handelChange = () => {
     console.log(yearRef.current.value);
-  }
+    nav(`/year/${yearRef.current.value}`)
+  };
   const getYears = async () => {
     let { data } = await axios.get(
       `https://www.omdbapi.com/?s=bank&amp;y=${YYYY}&apikey=8ec4e915`
@@ -19,7 +20,7 @@ const Years = () => {
   };
   useEffect(() => {
     getYears();
-  }, [YYYY]);
+  }, []);
 
   // `https://www.omdbapi.com/?s=bank&amp;y=${}&apikey=8ec4e915`
 
@@ -31,7 +32,6 @@ const Years = () => {
           className="select select-ghost w-full max-w-xs mt-4"
           onChange={handelChange}
         >
-          {/* לסדר את השגיאה ששורה 45 עושה */}
           <option value={1990}>1990</option>
           <option value={2000}>2000</option>
           <option value={2010}>2010</option>

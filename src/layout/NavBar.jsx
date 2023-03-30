@@ -39,7 +39,6 @@ const NavBar = () => {
             />
           </Carousel>
         </div>
-        <Years/>
         <div className="downNav"></div>
       </div>
     </div>
