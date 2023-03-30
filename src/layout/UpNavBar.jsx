@@ -1,4 +1,3 @@
-import { Carousel } from "flowbite-react";
 import React, { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Home from "../components/Home";
