@@ -12,7 +12,7 @@ const NavBar = () => {
     <div>
       <div className="upNav">
         {/* -------------------------------- */}
-        <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
+        {/* <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
           <Carousel slideInterval={5000}>
             <img
               className="h-[1000px] xl:w-[1600] w-[600] md:h-[1300]"
@@ -38,7 +38,8 @@ const NavBar = () => {
               alt="..."
             />
           </Carousel>
-        </div>
+        </div> */}
+        <Solide/>
         <div className="downNav"></div>
       </div>
     </div>
