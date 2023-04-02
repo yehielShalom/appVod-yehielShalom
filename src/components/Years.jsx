@@ -3,9 +3,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 const Years = () => {
-  // const { YYYY } = useParams();
-  // const [year, setYear] = useState([]);
-
   const yearRef = useRef();
   const nav = useNavigate();
 
