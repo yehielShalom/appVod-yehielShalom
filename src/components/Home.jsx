@@ -31,7 +31,7 @@ const Home = () => {
         {movies &&
           movies.map((movie, index) => (
             <Link key={index} to={`/video/${movie.imdbID}`}>
-              <img className="rounded" src={movie.Poster} alt="bank poster" />
+              <img className="rounded" src={movie.Poster} alt={movie.Title} />
             </Link>
           ))}
       </div>

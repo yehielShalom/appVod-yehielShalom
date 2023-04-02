@@ -26,7 +26,7 @@ const OneMovie = () => {
 
       <div className="card card-side bg-base-100 shadow-xl m-36">
         <figure>
-          <img src={movie.Poster} alt="Movie" />
+          <img src={movie.Poster} alt={movie.Title} />
         </figure>
         <div className="card-body">
           <h2 className="card-title">Name : {movie.Title}</h2>
