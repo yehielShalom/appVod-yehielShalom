@@ -7,19 +7,33 @@ const UpNavBar = () => {
   const handleClick = () => {
     nav(`/search/${searchRef.current.value}`);
   };
+  function handleKeyPress() {
+    nav(`/search/${searchRef.current.value}`);
+  }
 
   return (
     <div className="upNav absolute z-50 flex justify-between w-screen">
       <div className="logoAndSearch flex justify-between w-screen m-5">
         <Link to={"/"}>
-          <div className="italic hover:not-italic text-4xl text-red-600">vodApp</div>
+          <div className="italic hover:not-italic text-4xl text-red-600">
+            vodApp
+          </div>
         </Link>
         <div className="form-control">
           <div className="input-group">
-            <input ref={searchRef}
+            <input
+              ref={searchRef}
               type="text"
               placeholder="Search…"
               className="input input-bordered input-sm"
+              onKeyDown={(e) => {
+                if (e.key == "Enter") {
+                  searchRef.current.value
+                    ? nav(`/search/${searchRef.current.value}`)
+                    : nav("/");
+                  searchRef.current.value = "";
+                }
+              }}
             />
             <button
               onClick={() => {
