@@ -15,7 +15,6 @@ const OneMovie = () => {
     console.log(data);
     console.log(id);
   };
-  //{`https://omdbapi.com/?i=${id}&apikey=8ec4e915`}
 
   useEffect(() => {
     getData();

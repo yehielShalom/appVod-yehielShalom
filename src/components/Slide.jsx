@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from 'react'
+import { BsFillInfoCircleFill } from 'react-icons/Bs';
 import * as hi2 from 'react-icons/hi2'
+import { Link } from 'react-router-dom';
 
 export const Slide = ({ images, Right, Left, Button, Time }) => {
   
   // states
   const [index, setIndex] = useState(0)
+
+  const links = ['video/tt0460649','video/tt4154796','video/tt9271672','video/tt0463985'];
   
   useEffect(() => {
     const intervalId = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, Time? Time : 3000);
+    }, Time? Time : 5000);
 
     return () => clearInterval(intervalId);
   }, [images]);
 
   return (
-    <section className='w-full overflow-hidden bg-transparent relative h-[40vh] md:h-[60vh] lg:h-[80vh] xl:h-[90vh]'>
+    <section className='w-full overflow-hidden bg-transparent relative h-[35vh] md:h-[35vh] lg:h-[55vh] xl:h-[65vh]'>
       <div className='absolute w-screen h-full bg-transparent flex justify-between items-center p-10 z-10'>
         <button
           onClick={() =>
@@ -52,6 +56,9 @@ export const Slide = ({ images, Right, Left, Button, Time }) => {
         {images.map((image, i) => 
           {return Button ? Button : <button key={i} onClick={() => setIndex(i)} className={`mx-2 bg-slate-300 rounded-full ${i == index? ' border-[2px] border-slate-500 w-[17px] h-[17px]' : 'w-[15px] h-[15px]'}`}></button>}
         )}
+      </div>
+      <div className='absolute z-50 bottom-20 left-20 btn btn-warning lg:h-6' >
+        <Link to ={links[index]} className='flex justify-around flex-wrap'>More Information <BsFillInfoCircleFill/> </Link>
       </div>
     </section>
   );

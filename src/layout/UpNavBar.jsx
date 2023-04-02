@@ -9,10 +9,10 @@ const UpNavBar = () => {
   };
 
   return (
-    <div className="upNav absolute z-10 flex justify-between w-screen">
+    <div className="upNav absolute z-50 flex justify-between w-screen">
       <div className="logoAndSearch flex justify-between w-screen m-5">
         <Link to={"/"}>
-          <div className="italic hover:not-italic text-4xl">logo</div>
+          <div className="italic hover:not-italic text-4xl text-red-600">vodApp</div>
         </Link>
         <div className="form-control">
           <div className="input-group">

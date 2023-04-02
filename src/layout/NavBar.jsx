@@ -2,6 +2,7 @@ import { Carousel } from "flowbite-react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Years from "../components/years";
+import { Slide } from "../components/Slide";
 
 const NavBar = () => {
   const nav = useNavigate();
@@ -12,34 +13,13 @@ const NavBar = () => {
     <div>
       <div className="upNav">
         {/* -------------------------------- */}
-        {/* <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
-          <Carousel slideInterval={5000}>
-            <img
-              className="h-[1000px] xl:w-[1600] w-[600] md:h-[1300]"
-              src="https://tse2.mm.bing.net/th?id=OIP.QwSGzGGEdiYUjtbO8e5m9AHaEK&pid=Api&P=0"
-              alt="..."
-            />
-            <img
-              className="h-[600px] w-full md:h-[1500]"
-              src="https://tse2.mm.bing.net/th?id=OIP.QwSGzGGEdiYUjtbO8e5m9AHaEK&pid=Api&P=0"
-              alt="..."
-            />
-            <img
-              className="h-[600px] w-full md:h-[1500]"
-              src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
-              alt="..."
-            />
-            <img
-              src="https://flowbite.com/docs/images/carousel/carousel-4.svg"
-              alt="..."
-            />
-            <img
-              src="https://flowbite.com/docs/images/carousel/carousel-5.svg"
-              alt="..."
-            />
-          </Carousel>
-        </div> */}
-        <Solide/>
+        <Slide
+          images={[
+            "https://images7.alphacoders.com/676/thumb-1920-676083.jpg",
+            "https://images.hdqwalls.com/download/avengers-end-game-4k-banner-cb-1920x1080.jpg",
+            "https://dx35vtwkllhj9.cloudfront.net/lionsgateus/prey-for-the-devil/images/regions/us/share.png",
+          "http://www.theworkprint.com/wp-content/uploads/2015/03/The-Fast-and-the-Furious-Tokyo-Drift-2006-poster.jpg",]}
+        />
         <div className="downNav"></div>
       </div>
     </div>
