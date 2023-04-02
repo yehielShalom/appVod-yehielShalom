@@ -16,7 +16,7 @@ const Years = () => {
   //`/search/${searchRef.current.value}`
   return (
     <div>
-      <div className=" border-t-[3px] mt-4">
+      <div className=" border-b-[1.5px] mt-4">
         <div className="topYears flex mb-2 ms-20 text-left">
           <h5 className="ms-2">top years:</h5>
         <p className="me-2 hover:text-purple-600">{!searchQ ? <Link to={`/search/bank/year/1950`}>1950</Link> :<Link to={`/search/${searchQ}/year/1950`}>1950</Link>}</p>
@@ -31,7 +31,7 @@ const Years = () => {
         <div className="flex justify-center">
         <select 
           ref={yearRef}
-          className="select select-ghost w-full max-w-xs mt-4 justify-center"
+          className="select select-ghost w-full max-w-xs mt-4 mb-3 justify-center"
           onChange={handelChange}>
           <option value={1990}>1990</option>
           <option value={2000}>2000</option>
