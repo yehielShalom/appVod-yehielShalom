@@ -35,11 +35,7 @@ const Home = () => {
       <Years /> 
       {!movies.length && 
        <div className="text-center my-auto"><ScaleLoader color="#36d7b7"/></div>}
-
       <div className="grid md:grid-cols-4 gap-6 grid-cols-1 sm:grid-cols-2 mt-6 p-6">
-      
-        
-        
         {movies &&
           movies.map((movie, index) => (
             <Link key={index} to={`/video/${movie.imdbID}`} className=" hover:shadow-2xl hover:scale-[105%] duration-300">
