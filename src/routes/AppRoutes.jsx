@@ -14,7 +14,8 @@ const AppRoutes = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="search/:searchQ" element={<Home />} />
-            <Route path="year/:YYYY" element={<Home/>} />
+            {/* year/:YYYY */}
+            <Route path="search/:searchQ/year/:YYYY" element={<Home/>} />
           </Route>
           <Route path="video/:id" element={<OneMovie />} />
           
