@@ -7,9 +7,6 @@ const UpNavBar = () => {
   const handleClick = () => {
     nav(`/search/${searchRef.current.value}`);
   };
-  function handleKeyPress() {
-    nav(`/search/${searchRef.current.value}`);
-  }
 
   return (
     <div className="upNav absolute z-50 flex justify-between w-screen">
