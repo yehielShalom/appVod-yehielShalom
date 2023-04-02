@@ -57,8 +57,8 @@ export const Slide = ({ images, Right, Left, Button, Time }) => {
           {return Button ? Button : <button key={i} onClick={() => setIndex(i)} className={`mx-2 bg-slate-300 rounded-full ${i == index? ' border-[2px] border-slate-500 w-[17px] h-[17px]' : 'w-[15px] h-[15px]'}`}></button>}
         )}
       </div>
-      <div className='absolute z-50 bottom-20 left-20 btn btn-warning lg:h-6' >
-        <Link to ={links[index]} className='flex justify-around flex-wrap'>More Information <BsFillInfoCircleFill/> </Link>
+      <div className='absolute z-50 bottom-20 left-20 btn btn-warning md:p-2' >
+        <Link to ={links[index]} className='flex justify-around flex-wrap'><p className='mr-1 max-md:hidden'>More Information</p> <BsFillInfoCircleFill/> </Link>
       </div>
     </section>
   );

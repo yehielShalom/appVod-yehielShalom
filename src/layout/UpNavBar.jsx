@@ -10,7 +10,7 @@ const UpNavBar = () => {
   };
 
   return (
-    <div className="upNav absolute z-50 flex justify-between w-screen">
+    <div className="upNav absolute z-50 flex justify-between w-screen top-0">
       <div className="logoAndSearch flex justify-between w-screen m-5">
         <Link to={"/"}>
           <div className="italic hover:not-italic text-4xl text-red-600">
