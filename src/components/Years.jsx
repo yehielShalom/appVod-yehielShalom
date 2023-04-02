@@ -16,9 +16,9 @@ const Years = () => {
   //`/search/${searchRef.current.value}`
   return (
     <div>
-      <div className=" border-b-[1.5px] mt-4">
-        <div className="topYears flex mb-2 ms-20 text-left">
-          <h5 className="ms-2">top years:</h5>
+      <div className="ms-20 border-b-[1px] mt-4 me-20">
+        <div className="topYears flex mb-2 text-left">
+        <h2 className="me-2 text-white">Top Years:</h2>
         <p className="me-2 hover:text-purple-600">{!searchQ ? <Link to={`/search/bank/year/1950`}>1950</Link> :<Link to={`/search/${searchQ}/year/1950`}>1950</Link>}</p>
         <p className="me-2 hover:text-purple-600">{!searchQ ? <Link to={`/search/bank/year/1960`}>1960</Link> :<Link to={`/search/${searchQ}/year/1960`}>1960</Link>}</p>
         <p className="me-2 hover:text-purple-600">{!searchQ ? <Link to={`/search/bank/year/1970`}>1970</Link> :<Link to={`/search/${searchQ}/year/1970`}>1970</Link>}</p>
@@ -28,11 +28,12 @@ const Years = () => {
         <p className="me-2 hover:text-purple-600">{!searchQ ? <Link to={`/search/bank/year/2010`}>2010</Link> :<Link to={`/search/${searchQ}/year/2010`}>2010</Link>}</p>
         <p className="me-2 hover:text-purple-600">{!searchQ ? <Link to={`/search/bank/year/2020`}>2020</Link> :<Link to={`/search/${searchQ}/year/2020`}>2020</Link>}</p>
         </div>
-        <div className="flex justify-center">
+        <div className="">
         <select 
           ref={yearRef}
-          className="select select-ghost w-full max-w-xs mt-4 mb-3 justify-center"
+          className="select select-ghost w-full max-w-xs mt-4 mb-3 text-center bg-slate-300"
           onChange={handelChange}>
+          <option disabled selected className="text-black font-mono">Option</option>
           <option value={1990}>1990</option>
           <option value={2000}>2000</option>
           <option value={2010}>2010</option>
