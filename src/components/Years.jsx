@@ -16,7 +16,7 @@ const Years = () => {
   //`/search/${searchRef.current.value}`
   return (
     <div>
-      <div className=" border-t-[3px] mt-4 ">
+      <div className=" border-t-[3px] mt-4">
         <div className="topYears flex mb-2 ms-20 text-left">
           <h5 className="ms-2">top years:</h5>
         <p className="me-2 hover:text-purple-600">{!searchQ ? <Link to={`/search/bank/year/1950`}>1950</Link> :<Link to={`/search/${searchQ}/year/1950`}>1950</Link>}</p>
