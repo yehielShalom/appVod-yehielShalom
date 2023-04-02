@@ -6,6 +6,7 @@ const UpNavBar = () => {
   const nav = useNavigate();
   const handleClick = () => {
     nav(`/search/${searchRef.current.value}`);
+    console.log(searchRef.current.value);
   };
 
   return (
