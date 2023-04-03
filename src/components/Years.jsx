@@ -4,42 +4,46 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 
 const Years = () => {
   const yearRef = useRef();
-  const {searchQ} =useParams()
+  const { searchQ } = useParams();
   const nav = useNavigate();
 
   const handelChange = () => {
     // year/${yearRef.current.value}
-    searchQ ?
-    nav(`/search/${searchQ}/year/${yearRef.current.value}`):
-    nav(`/search/bank/year/${yearRef.current.value}`);
+    searchQ
+      ? nav(`/search/${searchQ}/year/${yearRef.current.value}`)
+      : nav(`/search/bank/year/${yearRef.current.value}`);
   };
   //`/search/${searchRef.current.value}`
   return (
     <div>
       <div className="ms-20 border-b-[1px] mt-4 me-20">
         <div className="topYears flex mb-2 text-left">
-        <h2 className="me-2 text-white">Top Years:</h2>
-        <p className="me-2 hover:text-purple-600">{!searchQ ? <Link to={`/search/bank/year/1950`}>1950</Link> :<Link to={`/search/${searchQ}/year/1950`}>1950</Link>}</p>
-        <p className="me-2 hover:text-purple-600">{!searchQ ? <Link to={`/search/bank/year/1960`}>1960</Link> :<Link to={`/search/${searchQ}/year/1960`}>1960</Link>}</p>
-        <p className="me-2 hover:text-purple-600">{!searchQ ? <Link to={`/search/bank/year/1970`}>1970</Link> :<Link to={`/search/${searchQ}/year/1970`}>1970</Link>}</p>
-        <p className="me-2 hover:text-purple-600">{!searchQ ? <Link to={`/search/bank/year/1980`}>1980</Link> :<Link to={`/search/${searchQ}/year/1980`}>1980</Link>}</p>
-        <p className="me-2 hover:text-purple-600">{!searchQ ? <Link to={`/search/bank/year/1990`}>1990</Link> :<Link to={`/search/${searchQ}/year/1990`}>1990</Link>}</p>
-        <p className="me-2 hover:text-purple-600">{!searchQ ? <Link to={`/search/bank/year/2000`}>2000</Link> :<Link to={`/search/${searchQ}/year/2000`}>2000</Link>}</p>
-        <p className="me-2 hover:text-purple-600">{!searchQ ? <Link to={`/search/bank/year/2010`}>2010</Link> :<Link to={`/search/${searchQ}/year/2010`}>2010</Link>}</p>
-        <p className="me-2 hover:text-purple-600">{!searchQ ? <Link to={`/search/bank/year/2020`}>2020</Link> :<Link to={`/search/${searchQ}/year/2020`}>2020</Link>}</p>
+          <h2 className="me-2 text-white">Top Years:</h2>
+          {Array.from({ length: 8 }, (_, i) => (
+            <Link
+              className="me-2 hover:text-purple-600"
+              key={i}
+              to={`/search/${searchQ ? searchQ : "bank"}/year/${1950 + i * 10}`}
+            >
+              {1950 + i * 10}
+            </Link>
+          ))}
         </div>
         <div className="">
-        <select 
-          ref={yearRef}
-          className="select select-ghost w-full max-w-xs mt-4 mb-3 text-center bg-slate-300"
-          onChange={handelChange}>
-          <option disabled defaultValue className="text-black font-mono">Option</option>
-          {Array.from({ length: 74 }, (_, i) => (
-            <option className=" text-black" key={i} value={2023 - i}>
-              {2023 - i}
+          <select
+            ref={yearRef}
+            className="select select-ghost w-full max-w-xs mt-4 mb-3 text-center bg-slate-300"
+            onChange={handelChange}
+          >
+            <option disabled defaultValue className="text-black font-mono">
+              Option
             </option>
-          ))}
-        </select>
+            {Array.from({ length: 74 }, (_, i) => (
+              <option className=" text-black" key={i} value={2023 - i}>
+                {2023 - i}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
     </div>
