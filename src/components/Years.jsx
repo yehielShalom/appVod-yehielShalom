@@ -33,11 +33,12 @@ const Years = () => {
           ref={yearRef}
           className="select select-ghost w-full max-w-xs mt-4 mb-3 text-center bg-slate-300"
           onChange={handelChange}>
-          <option disabled selected className="text-black font-mono">Option</option>
-          <option value={1990}>1990</option>
-          <option value={2000}>2000</option>
-          <option value={2010}>2010</option>
-          <option value={2020}>2020</option>
+          <option disabled defaultValue className="text-black font-mono">Option</option>
+          {Array.from({ length: 74 }, (_, i) => (
+            <option className=" text-black" key={i} value={2023 - i}>
+              {2023 - i}
+            </option>
+          ))}
         </select>
         </div>
       </div>
