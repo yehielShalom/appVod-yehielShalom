@@ -32,8 +32,10 @@ const Home = () => {
           <ScaleLoader color="#36d7b7" />
         </div>
       )}
-      {empty && <h1 className="text-6xl text-center text-gray-400">No results...</h1>}
-      <div className="grid md:grid-cols-4 gap-6 grid-cols-1 sm:grid-cols-2 mt-6 p-6">
+      {empty && (
+        <h1 className="text-6xl text-center text-gray-400">No results...</h1>
+      )}
+      <div className="me-20 ms-20 grid md:grid-cols-4 gap-6 grid-cols-1 sm:grid-cols-2 mt-6 p-6">
         {movies &&
           movies.map((movie, index) => (
             <Link

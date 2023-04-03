@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "../components/Home";
-// import Years from "../components/years";
 import Layout from "../layout/Layout";
 import NotFound404 from "../layout/NotFound404";
 import OneMovie from "../components/oneMovie";
