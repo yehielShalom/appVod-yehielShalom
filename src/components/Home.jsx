@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setData } from "../featutes/data/DataSlice";
 import UpNavBar from "../layout/UpNavBar";
 
+
 const Home = () => {
   const data = useSelector((state) => state.dataReducer.value);
   const dispath = useDispatch();
