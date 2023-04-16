@@ -10,20 +10,16 @@ const UpNavBar = () => {
   };
 
   return (
-    <div className="upNav absolute z-50 flex justify-between w-screen top-0">
-      <div className="logoAndSearch flex justify-between w-screen m-5">
-        <Link to={"/"}>
-          <div className="italic hover:not-italic text-4xl text-red-600">
-            vodApp
-          </div>
-        </Link>
-        <div className="form-control">
-          <div className="input-group">
+    <div className="upNav flex justify-between w-screen top-0">
+      <div className="logoAndSearch flex justify-center items-center w-screen ms-20  mt-10 me-20 h-[300px] bg-cyan-800">
+        <div className="form-control flex ">
+          <h1 className="text-white text-2xl mb-2">Find your table for any occasion</h1>
+          <div className="input-group ">
             <input
               ref={searchRef}
               type="text"
-              placeholder="Search…"
-              className="input input-bordered input-sm"
+              placeholder="state, city or town"
+              className="input input-bordered me-5"
               onKeyDown={(e) => {
                 if (e.key == "Enter") {
                   searchRef.current.value
@@ -33,27 +29,10 @@ const UpNavBar = () => {
                 }
               }}
             />
-            <button
-              onClick={() => {
+            <button onClick={() => {
                 handleClick();
               }}
-              className="btn btn-square btn-sm"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-3 w-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </button>
+               className="btn btn-error">Let's go</button>
           </div>
         </div>
       </div>
