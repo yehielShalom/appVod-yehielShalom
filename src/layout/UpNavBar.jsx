@@ -5,7 +5,7 @@ const UpNavBar = () => {
   const searchRef = useRef();
   const nav = useNavigate();
   const handleClick = () => {
-    nav(`/search/${searchRef.current.value}`);
+    nav(`/search/?city=${searchRef.current.value}`);
     console.log(searchRef.current.value);
   };
 
@@ -23,7 +23,7 @@ const UpNavBar = () => {
               onKeyDown={(e) => {
                 if (e.key == "Enter") {
                   searchRef.current.value
-                    ? nav(`/search/${searchRef.current.value}`)
+                    ? nav(`/search/?city=${searchRef.current.value}`)
                     : nav("/");
                   searchRef.current.value = "";
                 }
