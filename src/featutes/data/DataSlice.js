@@ -14,7 +14,9 @@ export const dataSlice = createSlice({
     getData: (state, action) => {
       state.value = JSON.parse(localStorage.getItem("restaurants"));
     },
-    upDateData: (state, action) => {},
+    upDateData: (state, action) => {
+      
+    },
     deletData: (state, action) => {},
     addData: (state, action) => {},
   },
